@@ -10,7 +10,7 @@
 //
 //What if the given array is null? In this case, we do not need to do anything.
 //What if the given array is of length zero? In this case, we do not need to do anything.
-package round1;
+//package round1;
 
 public class MergeSort {
 	public int[] mergeSort (int[] array) {

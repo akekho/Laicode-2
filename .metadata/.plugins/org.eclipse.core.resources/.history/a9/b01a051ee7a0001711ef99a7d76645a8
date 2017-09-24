@@ -1,0 +1,22 @@
+package round3;
+
+public class InsertInSortedArray {
+	public ListNode insertInSortedArray(ListNode head, int value) {
+		ListNode newNode = new ListNode(value);
+		if (head == null||head.value>=value) {
+			newNode.next = head;
+			return newNode;
+		}
+		ListNode pre = head;
+		ListNode next = head.next;
+		
+		while (next!= null && pre.value<value) {
+			pre=pre.next;
+			next=next.next;
+		}
+		newNode.next = next;
+		pre.next=newNode;
+		return head;
+		
+	}
+}

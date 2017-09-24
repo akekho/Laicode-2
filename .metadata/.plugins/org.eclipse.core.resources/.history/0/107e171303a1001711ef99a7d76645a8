@@ -9,7 +9,6 @@
 package round3;
 
 public class MergeTwoSortedArray {
-	
 	public ListNode merge(ListNode one, ListNode two) {
 		if (one ==null) {
 			return two;

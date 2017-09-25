@@ -6,8 +6,6 @@ public class TreeNodeTest {
 		InOrderBinaryTree inorder = new InOrderBinaryTree();
 		PreOrderBinaryTree preorder= new PreOrderBinaryTree();
 		PostOrderBinaryTree postorder= new PostOrderBinaryTree();
-		CheckIfTreeBalanced isBalance = new CheckIfTreeBalanced();
-		SymmetricBinaryTree isSymmetric = new SymmetricBinaryTree();
 		TreeNode root = new TreeNode(5);
 			// build a binary search tree
 			 
@@ -35,8 +33,6 @@ public class TreeNodeTest {
 	     System.out.println("InOrder: "+inorder.inOrder(root));
 	     System.out.println("PreOrder: "+preorder.preOrder(root));
 	     System.out.println("PostOrder: "+postorder.postOrder(root));
-	     System.out.println("isBalance: "+ isBalance.isBalanced(root));
-	     System.out.println("isSymmetric: "+ isSymmetric.isSymmetric(root));
 
 		  
 	}

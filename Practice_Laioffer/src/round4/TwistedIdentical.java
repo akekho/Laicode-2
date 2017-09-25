@@ -1,0 +1,45 @@
+//Determine whether two given binary trees are identical
+//assuming any number of ‘tweak’s are allowed. 
+//A tweak is defined as a swap of the children of one node in the tree.
+//
+//Examples
+//
+//        5
+//
+//      /    \
+//
+//    3        8
+//
+//  /   \
+//
+//1      4
+//
+//and
+//
+//        5
+//
+//      /    \
+//
+//    8        3
+//
+//           /   \
+//
+//          1     4
+//
+//the two binary trees are tweaked identical.
+package round4;
+
+public class TwistedIdentical {
+	public boolean isTwistedIdentical (TreeNode A, TreeNode B) {
+		if (A==null && B== null) {
+			return true;
+		}
+		if (A==null || B==null) {
+			return false;
+		}
+		if (A.key!=B.key) {
+			return false;
+		}
+		return (isTwistedIdentical(A.left,B.right)&&isTwistedIdentical(A.right,B.left)||isTwistedIdentical(A.left,B.left)&&isTwistedIdentical(A.right,B.right));
+	}
+}

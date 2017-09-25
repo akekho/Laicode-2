@@ -1,0 +1,47 @@
+package round4;
+
+
+public class TreeNodeTest {
+	public static void main(String[] args){
+		InOrderBinaryTree inorder = new InOrderBinaryTree();
+		PreOrderBinaryTree preorder= new PreOrderBinaryTree();
+		PostOrderBinaryTree postorder= new PostOrderBinaryTree();
+		TreeNode root = new TreeNode(5);
+		  // build a binary search tree
+        /*
+         *              10
+         *            /   \ 
+         *           5     15
+         *            \    / \
+         *             8  12  20
+         *            /       /
+         *           7       17 
+         */
+//	    5
+//
+//	      /    \
+//
+//	    3        8
+//
+//	  /   \        \
+//
+//	1      4        11
+//inOrder	  [1, 3, 4, 5, 8, 11]
+//preOrder    [5, 3, 1, 4, 8, 11]
+//post-order  [1, 4, 3, 11, 8, 5]
+	      root.left = new TreeNode(3);
+	      root.right = new TreeNode(8);
+	      
+	      root.left.left = new TreeNode(1);
+	      root.left.right = new TreeNode(4);
+	      
+	      root.right.right = new TreeNode(11);
+
+
+	     System.out.println("InOrder: "+inorder.inOrder(root));
+	     System.out.println("PreOrder: "+preorder.preOrder(root));
+	     System.out.println("PostOrder: "+postorder.postOrder(root));
+
+		  
+	}
+}

@@ -1,0 +1,25 @@
+package round4;
+
+import round1.MergeSort;
+
+public class TreeNodeTest {
+	public static void main(String[] args){
+		InOrderBinaryTree solution = new InOrderBinaryTree();
+
+		TreeNode root = new TreeNode(10);
+
+	      root.left = new TreeNode(5);
+	      root.right = new TreeNode(15);
+
+	      root.left.right = new TreeNode(8);
+	      root.left.right.left = new TreeNode(7);
+
+	      root.right.left = new TreeNode(12);
+	      root.right.right = new TreeNode(20);
+	      root.right.right.left = new TreeNode(17);
+
+	     System.out.print(root);
+	     System.out.println(solution.inOrder(root));
+	     }
+		  
+}

@@ -1,0 +1,33 @@
+package round4;
+
+
+public class TreeNodeTest {
+	public static void main(String[] args){
+		InOrderBinaryTree solution = new InOrderBinaryTree();
+
+		TreeNode root = new TreeNode(10);
+		  // build a binary search tree
+        /*
+         *              10
+         *            /   \ 
+         *           5     15
+         *            \    / \
+         *             8  12  20
+         *            /       /
+         *           7       17 
+         */
+	      root.left = new TreeNode(5);
+	      root.right = new TreeNode(15);
+
+	      root.left.right = new TreeNode(8);
+	      root.left.right.left = new TreeNode(7);
+
+	      root.right.left = new TreeNode(12);
+	      root.right.right = new TreeNode(20);
+	      root.right.right.left = new TreeNode(17);
+
+	     System.out.printf("InOrder: "+solution.inOrder(root));
+
+		  
+	}
+}

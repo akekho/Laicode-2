@@ -9,7 +9,6 @@ public class TreeNodeTest {
 		CheckIfTreeBalanced isBalance = new CheckIfTreeBalanced();
 		SymmetricBinaryTree isSymmetric = new SymmetricBinaryTree();
 		IsBinarySearchTree isBST = new IsBinarySearchTree();
-		GetKeyInGivenRange getkey = new GetKeyInGivenRange();
 		TreeNode root = new TreeNode(5);
 			// build a binary search tree
 			 
@@ -40,7 +39,6 @@ public class TreeNodeTest {
 	     System.out.println("isBalance: "+ isBalance.isBalanced(root));
 	     System.out.println("isSymmetric: "+ isSymmetric.isSymmetric(root));
 	     System.out.println("isBST: "+ isBST.isBST(root));
-	     System.out.println("the keys in range 2 to 5 are: "+ getkey.getRange(root,2,5));
 
 		  
 	}

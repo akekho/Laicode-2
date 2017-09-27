@@ -1,0 +1,135 @@
+package round5;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+//Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.
+//
+//Assumptions
+//
+//A is not null
+//K is >= 0 and smaller than or equal to size of A
+//Return
+//
+//an array with size K containing the K smallest numbers in ascending order
+//Examples
+//
+//A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
+//package round5;
+//minHeap
+//public class KSmallestInUnsortedArray {
+
+public class KSmallestInUnsortedArray {
+//	public int[] maxHeapkSmallest(int[] array, int k) {
+//		if (array==null || array.length<= k) {
+//			return array;
+//		}
+//		int[] result= new int[k];
+//		if (k==0) {
+//			return result;
+//		}
+//		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k,new Comparator<Integer>() {
+//
+//			@Override
+//			public int compare(Integer o1, Integer o2) {
+//				if (o1.equals(o2)) {
+//					return 0;
+//				}
+//				return o1>o2?-1:1;
+//			}
+//		});
+//		for (int i=0; i<array.length;i++) {
+//			if (i<k) {
+//				maxHeap.offer(array[i]);
+//			}else if (maxHeap.peek()>array[i]) {
+//				maxHeap.poll();
+//				maxHeap.offer(array[i]);
+//			}
+//		}
+//		for (int i=k-1;i>=0;i--) {
+//			result[i]=maxHeap.poll();
+//		}
+//		return result;
+//	}
+	//heap -->Insert:log(n) top:O(1) update(log(n)) pop(log(n))
+	//make a k size pq -->O(k) n-k rest elements insert in seperately 
+	//add into a k size pq O(log(k))
+	//O(k)+O((n-k)log(k))
+	//heapify k elements-->O(k)
+	//from k to n pop and insert (n-k)log(k)
+	
+//	public int[] minHeapkSmallest(int[] array, int k) {
+//		if (array==null || array.length<= k) {
+//			return array;
+//		}
+//		int[] result= new int[k];
+//		if (k==0) {
+//			return result;
+//		}
+//		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+//		for (int i=0; i<array.length-1;i++) {
+//				minHeap.offer(array[i]);		
+//		}
+//		for (int i=0;i<k;i++) {
+//			result[i]=minHeap.poll();
+//		}
+//		return result;	
+//	}
+//	//heapify all O(n) k times pop out (log(n))
+//	//O(n+klog(n)) ⬆
+//}
+// quickselect(partition)
+	public int[] QuickSelectSmallest(int[] array, int k) {
+		if (array==null || array.length<= k) {
+			return array;
+		}
+		int[] result= new int[k];
+		if (k==0) {
+			return result;
+		}
+		quickSelect(array,0,array.length-1,k-1);
+		result = Arrays.copyOf(array, k);
+		Arrays.sort(result);
+		return result;
+	}
+
+private void quickSelect(int[] array, int left, int right, int target) {
+	// TODO Auto-generated method stub
+	int mid = partition(array,left,right);
+	//pivot
+	if (mid==target) {
+		return;
+	}else if (target<mid) {
+		quickSelect(array,left,mid-1,target);
+	}else {
+		quickSelect(array,mid+1,right,target);
+	}
+}
+
+private int partition(int[] array, int left, int right) {
+	// TODO Auto-generated method stub
+	int pivot = array[right];
+	int start = left;
+	int end = right-1;
+	while (start<=end) {
+		if (array[start]<pivot) {
+			start++;
+		}else if (array[end]>=pivot) {
+			end--;
+		}else {
+			swap(array,start++,end--);
+		}
+	}
+	return start;
+}
+
+private void swap(int[] array, int i, int j) {
+	// TODO Auto-generated method stub
+	int tmp = array[i];
+	array[i]=array[j];
+	array[j]=tmp;
+}
+}
+
+
+

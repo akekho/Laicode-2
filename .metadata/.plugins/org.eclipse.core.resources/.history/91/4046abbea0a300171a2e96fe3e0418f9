@@ -1,0 +1,17 @@
+package round5;
+
+import java.util.Arrays;
+
+public class Round5Test {
+	public static void main(String[] args){
+		int[] array = new int[] {4,9,32,5,6,3,2,7,56,43,21,34,67,86,74,14,17,19,32,34,44};
+		KSmallestInUnsortedArray ksmall = new KSmallestInUnsortedArray();
+		int[] result1= ksmall.maxHeapkSmallest(array,9);
+		int[] result2= ksmall.minHeapkSmallest(array,9);
+		int[] result3= quickSelect.minHeapkSmallest(array,9);
+		System.out.println(Arrays.toString(result1));
+		System.out.println(Arrays.toString(result2));
+		//System.out.println(Arrays.toString(result));
+		//System.out.println(Arrays.toString(result));
+	}
+}

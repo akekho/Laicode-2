@@ -1,0 +1,39 @@
+package round5;
+import java.util.ArrayDeque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+//Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.
+//
+//Assumptions
+//
+//A is not null
+//K is >= 0 and smaller than or equal to size of A
+//Return
+//
+//an array with size K containing the K smallest numbers in ascending order
+//Examples
+//
+//A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
+//package round5;
+
+public class KSmallestInUnsortedArray {
+	public int[] kSmallest(int[] array, int k) {
+		if (array==null || array.length<= k) {
+			return array;
+		}
+		int[] result= new int[k];
+		if (k==0) {
+			return result;
+		}
+		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+		for (int i=0; i<array.length-1;i++) {
+				minHeap.offer(array[i]);		
+		}
+		for (int i=0;i<k;i++) {
+			result[i]=minHeap.poll();
+		}
+		return result;	
+	}
+}
+

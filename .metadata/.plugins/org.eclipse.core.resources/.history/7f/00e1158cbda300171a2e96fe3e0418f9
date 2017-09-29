@@ -42,9 +42,9 @@ public class KthSmallestInSortedMatrix {
 		visited[0][0]=true;
 		for (int i = 0; i<k-1;i++) {
 			Cell cur = minHeap.poll();
-			if(cur.row+1<rows &&!visited[cur.row+1][cur.column]){//没出边界 且没访问过
-				minHeap.offer(new Cell (cur.row,cur.column,matrix[cur.row][cur.column+1]));
-				visited[cur.row][cur.column+1]=true;
+			if(cur.row+1<rows &&!visited[cur.row+1][cur.column]){
+				minHeap.offer(new Cell (cur.row+1,cur.column,matrix[cur.row+1][cur.column]));
+				visited[cur.row+1][cur.column]=true;
 			}
 		}
 		return minHeap.peek().value;

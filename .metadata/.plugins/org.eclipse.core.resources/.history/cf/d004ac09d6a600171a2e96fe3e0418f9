@@ -29,15 +29,5 @@ public class ReverseLinkedList {
 		}
 		return  pre;
 	}
-	public ListNode recReverse(ListNode head) {
-		if (head==null || head.next==null) {
-			return head;
-		}
-		ListNode nextNode= head.next;
-		ListNode newHead = recReverse(nextNode);
-		nextNode.next = head;
-		head.next = null;
-		return newHead;
-	}
 }
 

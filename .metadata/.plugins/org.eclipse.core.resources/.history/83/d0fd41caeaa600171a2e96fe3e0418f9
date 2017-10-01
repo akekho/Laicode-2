@@ -1,0 +1,20 @@
+package round5;
+
+import java.util.HashMap;
+import java.util.List;
+
+public class isBipartite {
+	public boolean isBipartite(List<GraphNode> graph) {
+		
+		for (GraphNode node:graph) {
+			if(!BFS(node,visited)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	private boolean BFS (GraphNode node,HashMap<GraphNode,Integer> visited) {
+		
+	}
+}
+

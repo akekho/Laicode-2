@@ -1,6 +1,5 @@
 package round4;
 
-import round5.CheckIfBTComplete;
 
 public class TreeNodeTest {
 	public static void main(String[] args){
@@ -11,7 +10,6 @@ public class TreeNodeTest {
 		SymmetricBinaryTree isSymmetric = new SymmetricBinaryTree();
 		IsBinarySearchTree isBST = new IsBinarySearchTree();
 		GetKeyInGivenRange getkey = new GetKeyInGivenRange();
-		CheckIfBTComplete ifCom = new CheckIfBTComplete();
 		TreeNode root = new TreeNode(5);
 			// build a binary search tree
 			 
@@ -43,8 +41,7 @@ public class TreeNodeTest {
 	     System.out.println("isSymmetric: "+ isSymmetric.isSymmetric(root));
 	     System.out.println("isBST: "+ isBST.isBST(root));
 	     System.out.println("the keys in range 2 to 5 are: "+ getkey.getRange(root,2,5));
-	     System.out.println ("isComplete: "+ ifCom.checkComplete(root));
-	     
+
 		  
 	}
 }

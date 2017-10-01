@@ -43,7 +43,7 @@ public class TreeNodeTest {
 	     System.out.println("isSymmetric: "+ isSymmetric.isSymmetric(root));
 	     System.out.println("isBST: "+ isBST.isBST(root));
 	     System.out.println("the keys in range 2 to 5 are: "+ getkey.getRange(root,2,5));
-	     System.out.println ("isComplete: "+ ifCom.checkComplete(root));
+	     System.out.println ("isComplete"+ ifCom.checkComplete(root));
 	     
 		  
 	}

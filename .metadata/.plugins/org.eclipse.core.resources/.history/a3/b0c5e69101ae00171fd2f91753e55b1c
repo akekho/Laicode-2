@@ -30,36 +30,39 @@ import java.util.Queue;
 
 public class Bipartite {
 	boolean isBipartite(List<GraphNode> graph) {
-		HashMap <GraphNode,Integer> visited = new HashMap<>();
+		HashMap<GraphNode, Integer> visited = new HashMap<GraphNode, Integer>();
 		for (GraphNode node : graph) {
-			if (!BST(node,visited)) {
+			if (!BFS(node, visited)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private boolean BST(GraphNode node,HashMap<GraphNode,Integer> visited) {
-		// TODO Auto-generated method stub
+	private boolean BFS(GraphNode node, HashMap<GraphNode, Integer> visited) {
 		if (visited.containsKey(node)) {
 			return true;
 		}
-		Queue<GraphNode> q = new LinkedList<>();
-		q.offer(node);
-		visited.put(node,0);
-		while (!q.isEmpty()) {
-			GraphNode cur = q.poll();
+		Queue<GraphNode> queue = new LinkedList<>();
+		queue.offer(node);
+		visited.put(node, 0);
+		while (!queue.isEmpty()) {
+			GraphNode cur = queue.poll();
 			int Groupcur = visited.get(cur);
-			int GroupNei = Groupcur == 0? 1:0;
-			for (GraphNode nei:cur.neighbors) {
+			int Groupnei = Groupcur == 0 ? 1 : 0;
+			for (GraphNode nei : cur.neighbors) {
 				if (!visited.containsKey(nei)) {
-					visited.put(nei, GroupNei);
-					q.offer(nei);
-				}else if (visited.get(nei)!=GroupNei) {
+					visited.put(nei, Groupnei);
+					queue.offer(nei);
+
+				} else if (visited.get(nei) != Groupnei) {
 					return false;
 				}
 			}
+
 		}
-		return false;
+		return true;
+
 	}
 }
+

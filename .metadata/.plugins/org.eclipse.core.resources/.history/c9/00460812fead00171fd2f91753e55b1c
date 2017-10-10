@@ -13,6 +13,5 @@ public class Round5Test {
 		System.out.println(Arrays.toString(result2));
 		System.out.println(Arrays.toString(result3));
 		//System.out.println(Arrays.toString(result));
-		
 	}
 }
